@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual World - Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h2>Virtual World</h2>
+            <div class="user-info">
+                <span>Logged in as: <strong>{{ current_user.username }}</strong></span>
+                <a href="{{ url_for('logout') }}" class="btn btn-small">Logout</a>
+            </div>
+        </div>
+        
+        <div class="game-world" id="gameWorld">
+            <div class="player" id="currentPlayer" data-id="{{ current_user.id }}">
+                <div class="player-name">{{ current_user.username }}</div>
+            </div>
+            <!-- Other players will be added dynamically via JavaScript -->
+        </div>
+        
+        <div class="game-controls">
+            <div class="control-group">
+                <button id="btnUp" class="control-btn">↑</button>
+            </div>
+            <div class="control-group">
+                <button id="btnLeft" class="control-btn">←</button>
+                <button id="btnDown" class="control-btn">↓</button>
+                <button id="btnRight" class="control-btn">→</button>
+            </div>
+        </div>
+        
+        <div class="game-info">
+            <h3>Online Players</h3>
+            <ul id="playersList"></ul>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
