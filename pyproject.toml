@@ -1,0 +1,33 @@
+[project]
+name = "multiplayer-game"
+version = "0.1.0"
+description = "A multiplayer web-based game using Flask and Flask-SocketIO"
+authors = [
+    {name = "Your Name"}
+]
+requires-python = ">=3.8,<3.13"
+readme = "README.md"
+license = {text = "MIT"}
+
+dependencies = [
+    "Flask==2.2.3",
+    "Flask-SQLAlchemy==3.0.3",
+    "Flask-Login==0.6.2",
+    "Flask-SocketIO==5.3.4",
+    "python-dotenv==1.0.0",
+    "gunicorn==21.2.0",
+    "gevent==23.9.1",
+    "gevent-websocket==0.10.1",
+    "Werkzeug==2.2.3",
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+# UV-specific configurations
+exclude = ["__pycache__", "*.pyc", "*.pyo", "*.pyd", ".Python", "env", "venv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

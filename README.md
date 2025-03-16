@@ -22,24 +22,51 @@ A web-based multiplayer game where users can log in and move around in a virtual
 
 ### Prerequisites
 
-- Python 3.7 or higher
-- pip (Python package manager)
+- Python 3.8 or higher
+- [UV](https://github.com/astral-sh/uv) (optional, automated installation available)
 
 ### Installation
 
-1. Clone the repository (or navigate to the project directory)
+#### Option 1: Using UV (Recommended)
 
-2. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
+UV is a fast, reliable Python package installer and resolver. We provide a setup script that will install UV if needed and set up your environment:
 
-3. Run the application:
-   ```
-   python app.py
-   ```
+```bash
+# Make the setup script executable
+chmod +x setup_uv.sh
 
-4. Open your browser and navigate to `http://localhost:5001`
+# Run the setup script
+./setup_uv.sh
+
+# Activate the virtual environment
+source venv/bin/activate
+```
+
+#### Option 2: Using pip
+
+If you prefer to use pip:
+
+```bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Running the Application
+
+Once your environment is set up:
+
+```bash
+# Run the application
+python app.py
+```
+
+Open your browser and navigate to `http://localhost:5001`
 
 ## How to Play
 
